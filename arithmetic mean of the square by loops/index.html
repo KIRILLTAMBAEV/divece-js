@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сумма квадратов</title>
+</head>
+<body>
+    <form id="inputForm">
+        <label>введите набор чисел<input id="nums" type="text"></label>
+        <button type="submit">провести расчет</button>
+        <p id="result"></p>
+    </form>
+    <script>
+        document.getElementById('inputForm').addEventListener('submit', event => {
+            event.preventDefault();
+
+            const input = document.getElementById('nums').value.trim();
+            const nums = input.length === 0 ? [] : input.split(' ');
+            
+            let containsNaNs = false;
+            for (let i = 0; i < nums.length; ++i){
+                nums[i] = parseInt(nums[i]);
+                if (isNaN(nums[i])) {
+                    containsNaNs = true
+                    break;
+                }
+            }
+
+            let msg;
+            if (containsNaNs) {
+                msg = 'Введите числа'
+            } else if (nums.length === 0) {
+                msg = 'Нет данных для расчета'
+            } else {
+                // let sum = 0;
+                // for (let i = 0; i < nums.length; i += 2) {
+                //     sum += nums[i] ** 2 
+                // }
+
+                let sum = nums.filter((_,num) => i % 2 === 0)
+                              .map(num => num ** 2)
+                              .reduce((prev, num) => prev + num);            
+
+                msg = `Сумма квадратов чисел на четных позициях ${sum}`;
+            }
+            document.getElementById('result').textContent = msg;
+        })
+    </script>
+</body>
+</html>

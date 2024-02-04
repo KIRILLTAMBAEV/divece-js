@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Animation Sandbox</title>
+        <style>
+            body { margin: 0; overflow: hidden }
+        </style>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const canvas = document.getElementById('canvas');
+                const width  = canvas.width  = window.innerWidth;
+                const height = canvas.height = window.innerHeight;
+                setup(canvas.getContext('2d'), width, height);
+            });
+        </script>
+    </head>
+    <body>
+        <canvas id="canvas"></canvas>
+        <script>
+
+            const count = 1000;
+            const minRadius = 5;
+            const maxRadius = 5;
+            const maxSpeed = 1;
+
+            const radii = Array(count);
+            const xs    = Array(count);
+            const ys    = Array(count);
+            const dxs   = Array(count);
+            const dys   = Array(count);
+
+            function setup(ctx, width, height) {
+                for (let i = 0; i < count; i++) {
+                    radii[i] = Math.trunc(minRadius + Math.random() * (maxRadius - minRadius + 1))
+                    const minX = radii[i];
+                    const maxX = width - radii[i]
+                    xs[i] = Math.trunc(minX + Math.random() * (maxX - minX));
+                    const minY = radii[i]
+                    const maxY = height - radii[i]
+                    ys[i] = Math.trunc(minY + Math.random() * (maxY - minY));
+                    dxs[i] = Math.trunc(-maxSpeed + Math.random() * (2 * maxSpeed + 1));
+                    dys[i] = Math.trunc(-maxSpeed + Math.random() * (2 * maxSpeed + 1));
+                }
+
+                ctx.fillStyle = 'black';
+                ctx.beginPath();
+                ctx.rect(0, 0, width, height);
+                ctx.fill();
+
+                window.requestAnimationFrame(timestamp => draw(ctx, width, height, timestamp));
+            }
+
+            function draw(ctx, width, height, timestamp) {
+                if (width != window.innerWidth || height != window.innerHeight) {
+                    width = canvas.width  = window.innerWidth;
+                    height = canvas.height = window.innerHeight;
+                }
+
+                ctx.fillStyle = 'black';
+                ctx.beginPath();
+                ctx.rect(0, 0, width, height);
+                ctx.fill();
+                
+                for (let i = 0; i < count; i++) {
+                ctx.fillStyle = 'white';
+                ctx.beginPath();
+                ctx.arc(xs[i], ys[i], radii[i] , 0, Math.PI * 2);
+                ctx.fill();
+                xs[i] += dxs[i]
+                if ((xs[i] + radii[i] ) > width || (xs[i] - radii[i]) < 0) {
+                    dxs[i] = -dxs[i]
+                }
+                ys[i] += dys[i] 
+                if ((ys[i] + radii[i]) > height || (ys[i] - radii[i]) < 0) {
+                    dys[i] = -dys[i]
+                } 
+            }
+
+                window.requestAnimationFrame(timestamp => draw(ctx, width, height, timestamp));
+            }
+        </script>
+    </body>
+</html>

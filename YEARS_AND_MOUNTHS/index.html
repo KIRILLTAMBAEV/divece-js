@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="inputForm">
+        <label>год:<input id='year' type="text"></label>
+        <label>МЕСЯЦ:<input id='month' type="text"></label>
+        <button type="submit">Узнать месяц</button>
+        <p id="result"></p>
+    </form>
+    <script>
+        document.getElementById('inputForm').addEventListener('submit', event => {
+            event. preventDefault()
+         
+        const year = parseFloat(document.getElementById('year').value)
+        const month = parseFloat(document.getElementById('month').value)
+        if (isNaN(month)) {
+            document.getElementById('result'). textContent = "НЕВЕРНЫЙ ВВОД";
+        } else {
+            let mon 
+            switch (month) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    mon = "31"
+                    break;
+
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    mon = "30"
+
+                case 2:
+                    mon = year % 4 ===0 && year % 100 !==0 || year % 400 ===0 ? '28' : '29'
+                    break;
+                
+                default: mon = "неверный ввод данных"
+            }
+            document.getElementById('result'). textContent = mon;
+        }
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="result"></p>
+    <script>
+        const minOperand = 1 
+        const maxOperand = 10
+
+        TestCount = parseInt(prompt('Введите количесвто тестов'));
+
+
+        let correctAnswer = 0;
+        let incorrectAnswer = 0;
+        let i = 0
+
+        while(i < TestCount) {
+            const num1 = Math.trunc(minOperand + Math.random() * (maxOperand - minOperand + 1))
+            const num2 = Math.trunc(minOperand + Math.random() * (maxOperand - minOperand + 1))
+            const answer = parseInt(prompt(`${num1} + ${num2} = `)) 
+            i++;
+            if (num1 + num2 === answer) {
+                correctAnswer++;
+            } else {
+                incorrectAnswer++;
+            }
+        }
+        
+        document.getElementById('result'). innerHTML = 
+            `Количество правельных ответов: ${correctAnswer}<br>`+
+            `Количесвто неправильных ответов: ${incorrectAnswer}`; 
+
+    
+    </script>
+</body>
+</html>

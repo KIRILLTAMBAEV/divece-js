@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="result"></p>
+    <script>
+
+        let sum = 0;
+        let count = 0;
+
+        //let grade; 
+                     //do while
+        // do  {
+        //     grade = parseInt(prompt('Введите оценку (или 0 для расчета резульатат)'));
+        //     sum += grade;
+        //     ++count;
+        // }  while (grade !== 0) ;
+
+        //--count;
+
+        // if (count > 0) {
+        //     let avg = sum / count;
+        //     document.getElementById('result'). textContent = `Среднее арифметическое ${avg}`;
+        // } else {
+        //     document.getElementById('result'). textContent = `Нет данных для расчета`;
+        // } 
+
+                      // for 
+
+        for(let i = 0; i < 5; i++) {
+            grade = parseInt(prompt('Введите оценку'));
+            sum += grade;
+        }
+
+            let avg = sum / 5;
+            document.getElementById('result'). textContent = `Среднее арифметическое ${avg}`; 
+
+                                //while
+
+        // let grade; 
+        // while (grade !== 0) {
+        //     grade = parseInt(prompt('Введите оценку (или 0 для расчета резульатат)'));
+        //     sum += grade;
+        //     ++count;
+        // }
+
+        // --count;
+
+        // if (count > 0) {
+        //     let avg = sum / count;
+        //     document.getElementById('result'). textContent = `Среднее арифметическое ${avg}`;
+        // } else {
+        //     document.getElementById('result'). textContent = `Нет данных для расчета`;
+        // } 
+        
+        </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="inputForm">
+        <label> Введите год: <input id='number1' type="text"></label>
+        <button type="submit">Проверить год</button>
+        <p id="result"></p>
+    </form>
+    <script>
+        document.getElementById('inputForm').addEventListener('submit',event => {
+            event.preventDefault();
+            
+            const year = parseFloat(document.getElementById('number1').value);
+            
+            if (isNaN(year)) {
+                document.getElementById('result').textContent = "НЕВЕРНЫЙ ВВОД!";
+            } else {
+                let msg
+                if (year % 4 === 0 && year % 100 !== 0 || year % 400 === 0) {
+                    msg = `${year} является високосным годом.`;
+                } else {
+                    msg = `${year} НЕ является високосным годом.`;
+                }
+                // } else if (year % 100 !==0) {
+                //     msg = `${year} Является високосным годом.`;
+                // } else if (year % 400 !==0) {
+                //     msg = `${year} НЕ является високосным годом.`;
+                // } else { 
+                //     msg = `${year} Является високосным годом.`;
+                
+                document.getElementById('result'). textContent = msg;
+            }
+        });
+            
+        
+    </script>
+</body>
+</html>

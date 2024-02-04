@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="result"></p>
+    <script>
+       const count = parseInt(prompt('Введите количество чисел'))
+       let i = 0
+       let y = 0 
+       let res = 0
+       if (isNaN(count)) {
+            document.getElementById('result'). textContent = 'Вы ввели не правильно!';
+        } else {
+            while (i < count) {
+            const num = parseInt(prompt('Введите число'))
+            res = y += num 
+            res = Math.abs(res / num) 
+            i++
+            }
+            document.getElementById('result'). textContent = res;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="inputForm">
+        <label>В каком классе вы учитесь?<input id="class" type="text"></label>
+        <button type="submit">Нужно ли готовиться к ОРТ.</button>
+        <p id="result"></p>
+    </form>
+    <script>
+        document.getElementById('inputForm').addEventListener('submit', event => {
+            event.preventDefault()
+
+        const cls = parseInt(document.getElementById('class'). value)
+        const ClassNomer = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11].map(ClassNomer => parseInt(ClassNomer))
+        if (isNaN(cls)) {
+            document.getElementById('result').textContent ='Введите число'
+        } else {
+            // if (cls >= 10 && cls <= 11) {
+            //     res = 'Надо готовится к ОРТ'
+            // } else if (cls <= 0 || cls > 11) {
+            //     res = 'Введите номер класса'
+            // } else {
+            //     res = 'Пока отдыхай'
+            // }
+
+            let res 
+            for (let i = 0;i < ClassNomer.length; i++) {
+                if (cls === ClassNomer[i]) {
+                res = 'Надо готовится к ОРТ'
+                } else {
+                    res = 'Пока отдыхай'
+                }
+            } 
+
+            document.getElementById('result').textContent = res;
+        }
+        });
+    </script>
+</body>
+</html>

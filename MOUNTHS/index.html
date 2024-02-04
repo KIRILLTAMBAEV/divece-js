@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="inputForm">
+        <label>МЕСЯЦ:<input id='month' type="text"></label>
+        <button type="submit">Узнать месяц</button>
+        <p id="result"></p>
+    </form>
+    <script>
+        document.getElementById('inputForm').addEventListener('submit', event => {
+            event. preventDefault()
+           
+        const month = parseFloat(document.getElementById('month').value)
+        if (isNaN(month)) {
+            document.getElementById('result'). textContent = "НЕВЕРНЫЙ ВВОД";
+        } else {
+            let mon 
+            // if (month < 0 || month > 12) {
+            //     mon = 'НЕВЕРНЫЙ ВВОД ДАННЫХ'
+            // } else if (month === 1) {
+            //     mon = 'январь'
+            // } else if (month === 2) {
+            //     mon = 'февраль'
+            // } else if (month === 3) {
+            //     mon = 'март'
+            // } else {
+            //     mon = 'я заебался писать, короче другие месяца!'
+            // }
+            switch (month) {
+                case 12: mon = "декабрь"
+                    break;
+                
+                case 1: mon = "январь"
+                    
+                    break;
+                case 2: mon = "Февраль"
+                    break;
+                
+                case 3: mon = "март"
+                    break;
+
+                case 4: mon = "апрель"
+                    break;
+
+                case 5: mon = "май"
+                    break;
+
+                case 6: mon = "июнь"
+                    break;
+
+                case 7: mon = "июль"
+                    break;
+
+                case 8: mon = "август"
+                    break;
+
+                case 9: mon = "сентябрь"
+                    break;
+
+                case 10: mon = "октябрь"
+                    break;
+
+                case 11: mon = "ноябрь"
+                    break;
+
+                case 12: mon = "декабрь"
+                    break;
+
+                default: mon = "неверный ввод данных"
+            }
+            document.getElementById('result'). textContent = mon;
+        }
+        });
+
+    </script>
+</body>
+</html>

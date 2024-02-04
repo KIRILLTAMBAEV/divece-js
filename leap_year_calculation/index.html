@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="inputForm">
+        <label>год:<input id='year' type="text"></label>
+        <label>МЕСЯЦ:<input id='month' type="text"></label>
+        <button type="submit">Узнать месяц</button>
+        <p id="result"></p>
+    </form>
+    <script>
+        document.getElementById('inputForm').addEventListener('submit', event => {
+            event. preventDefault()
+         
+        const year = parseFloat(document.getElementById('year').value)
+        const month = parseFloat(document.getElementById('month').value)
+        if (isNaN(year) || isNaN(month)) {
+            document.getElementById('result'). textContent = "неверный ввод данных";
+        }
+        const dayCount = [31,28,31,30,31,30,31,31,30,31,30,31]
+        let mon = dayCount[month - 1]
+        if (!mon) {
+            mon = "неверный ввод данных"
+        } else if (month === 2 && year % 4 ===0 && year % 100 !==0 || year % 400 ===0) {
+            mon++;
+        }    
+            document.getElementById('result'). textContent = mon;
+        });
+    </script>
+</body>
+</html>

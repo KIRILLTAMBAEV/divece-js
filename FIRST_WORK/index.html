@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>практика</title>
+</head>
+<body>
+    <label>Введите число:<input id = 'number' type = 'text'></label>
+    <button id = resultButton>найти абсолютное число</button>
+    <p id="result"></p>
+
+    <script>
+            document.getElementById('resultButton').addEventListener('click', () => {
+            const num = parseFloat(document.getElementById('number').value)
+            let res 
+            if (!isNaN(num)) {
+                res = num
+              if (num < 0) {
+                res = num * (-1)
+            }
+            document.getElementById('result').textContent = res;
+                } else {
+            document.getElementById('result').textContent = res;
+                }
+              });
+        
+        
+        
+        // console.log('ПРИВЕТ')
+
+
+        //window.prompt(message, default);
+        
+
+        /*document.getElementById('result'). innerHTML =
+        '**************<br>'+
+        '*Привет, Мир!*<br>'+
+        '**************'    +
+
+        window.alert('hello,world')
+
+        window.alert;let a = +prompt("", "");
+        window.alert;let b = +prompt("", "");
+        alert(a+b)*/
+        /*const FirstName = prompt("Как тебя зовут?")
+        //document.getElementById('result').textContent =
+             //('У меня ') + FirstName;
+        document.getElementById('result').textContent = 
+             `Привет, ${FirstName}.`; */
+
+        // const num1 = parseFloat(prompt(''))
+        // const num2 = parseFloat(prompt(''))
+        // const el = document.getElementById('result')
+        
+        //   el.innerHTML =
+        //   `${num1} + ${num2} = ${num1 + num2}<br>`
+        //   el.innerHTML +=
+        //   `${num1} - ${num2} = ${num1 - num2}<br>`
+        //   el.innerHTML +=
+        //   `${num1} * ${num2} = ${num1 * num2}<br>`
+        //   el.innerHTML +=
+        //   `${num1} \ ${num2} = ${num1 / num2}<br>`
+        //   el.innerHTML +=
+        //   `${num1} % ${num2} = ${num1 % num2}<br>`
+        //   el.innerHTML +=
+        //   `${num1}<sup>${num2}</sup> = ${num1 ** num2}`
+
+            //   console.log("     J    S S")
+            //   console.log('     J   S') 
+            //   console.log('     J    S S')
+            //   console.log(' J   J       S')
+            //   console.log('  J J     S S')
+
+            
+            // let a = parseInt(1+2+3+4+5+6+7+8+9)
+            // document.getElementById('result'). textContent =
+            //  `1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 = ${a}`
+
+            // let a = parseFloat(4); 
+            // let b = parseFloat(1 - 1 / 3 + 1 / 5 - 1 / 7 + 1 / 9 - 1 / 11 + 1 / 13);
+            // alert(a*(b))
+        
+            // let a = parseFloat(prompt())
+            // let b = parseFloat(prompt())
+            // let c = parseFloat(prompt())
+            
+            // document.getElementById('result'). textContent = 
+            // ` Объём параллелепипеда ${a}x${b}x${c} = ${a*b*c}`
+
+            // let a = parseFloat(1)
+            // let con = console.log
+            // let b = parseFloat(2)
+            // let c = parseFloat(3)
+            // let d = parseFloat(4)
+            // console.log( 1,1**2,1**3,2,2**2,2**3,3,3**2,3**3,4,4**2,4**3)
+          
+          
+          
+            // console.log
+            // (a , a**1, a**2, a**3)
+
+            // let a = parseInt(prompt('Первое значение: '))
+            // let b = parseInt(prompt('Второе значение: '))
+            
+            // document.getElementById('result'). innerHTML = 
+            //   `До перестоновки: = a=${a}, b=${b}<br>`;
+
+            //   let temp = a 
+            //   a=b
+            //   b=temp
+            // a = a+b;
+            // b = a-b;
+            // a = a-b;
+
+        //    [a,b] = [b,a];
+        //     document.getElementById('result'). innerHTML += 
+        //       `После перестоновки: = a=${a}, b=${b}`;
+
+            //  const tempF = parseFloat(prompt('Введите температуру в градусах Фаренгейта: '));
+            //  const tempC = 5 / 9 * (tempF - 32);
+            //  document.getElementById('result'). textContent = 
+            //   `Температура в градусах Цельсия:${tempC.toFixed(2)}`;
+
+            // const min = parseFloat(prompt('Введите минимальное значение: '));
+            // const max = parseFloat(prompt('Введите максимальное значение:'));
+            
+            // const res =Math.trunc(min + Math.random() * (max - min + 1))
+            // document.getElementById('result'). textContent = 
+            //  `Случайно число от ${min} до ${max}: ${res}`
+            
+            // const F = parseFloat(prompt('Введите значение в футах: '))
+            // const M = F * 0.305
+            
+            // document.getElementById('result'). innerHTML = 
+            //  `Введите значение в футах: ${F}<br>
+            //   ${F} ф. = ${M.toFixed(2)} м.`
+
+            // const R = parseFloat(prompt('Введите радиус цилиндра: '))
+            // const C = parseFloat(prompt('Введите длину цилиндра: '))
+            // const S = R * R * 3.14159
+            // const V = S * C
+
+            // document.getElementById('result'). innerHTML = 
+            //  `Введите радиус и длину цилиндра: ${R} ${C}<br>
+            //   Площадь равна ${S.toFixed(2)}<br>
+            //   Объем равен ${V.toFixed(2)}`
+
+            // const F = parseFloat(prompt("Введите вес в фунтах:"))
+            // const D = parseFloat(prompt("Введите высоту в дюймах:"))
+            // const BMI = (F * 0.45359237) / ((D * 0.0254)**2)
+            // document.getElementById('result'). innerHTML = 
+            //  `Введите вес в фунтах: ${F}<br>Введите высоту в дюймах:${D}<br>BMI равен ${BMI.toFixed(2)}`
+
+
+            // const Year1 = (7 / 60 * 60 * 24 * 365) - (13 / 60 * 60 * 24 * 365) + 
+            //              (45 / 60 * 60 * 24 * 365) +  312032486
+            // const Year10 = Year1 * 10
+            // const Year100 = Year1 * 100
+            // const Year1000 = Year1 * 1000
+            // document.getElementById('result'). innerHTML = 
+            //  `Население США через 1 год: ${Year1}<br>
+            //   Население США через 10 лет: ${Year10}<br>
+            //   Население США через 100 лет: ${Year100}<br>
+            //   Население США через 1000 лет: ${Year1000}`
+
+            // const year = parseFloat(prompt('Введите количество лет:'))
+            // const sum = ((7 / 60 * 60 * 24 * 365) - (13 / 60 * 60 * 24 * 365) 
+            //             + (45 / 60 * 60 * 24 * 365) +  312032486) * year
+            // document.getElementById('result'). innerHTML = 
+            //  ` Введите количество лет: ${year}<br>
+            //    Население через ${year} лет ${sum}`
+
+
+            // const num = parseFloat(prompt('Введите вещественное число:'))
+            // let res = num 
+            // if (num < 0) {
+            //     res = num * (-1)
+            // }
+            // document.getElementById('result'). innerHTML = 
+            //   `Введите вещественное число: ${num}<br>|${num}| = ${res}`
+
+            // const num = parseInt(prompt('Введите число:'))
+            // let msg
+
+            // if (num % 2 ===0) {
+            //     msg = `Число ${num} является четным.`
+            // } else {
+            //     msg = `Число ${num} является нечетным.`
+            // }
+            // document.getElementById('result'). innerHTML = msg
+
+            // const num1 = parseInt(prompt('Введите первое число:'))
+            // const num2 = parseInt(prompt('Введите второе число:'))
+            // let res 
+            // if (num1 > num2) {
+            //     res = `Первое число ${num1} больше второго числа ${num2}.`
+            // } else if (num1 > num2) {
+            //     res = `Второе число ${num2} больше первого числа ${num1}.`
+            // } else {
+            //     res = 'Числа равны.'
+            // }
+
+            // document.getElementById('result').textContent = res;
+            
+
+    </script>
+</body>
+</html>

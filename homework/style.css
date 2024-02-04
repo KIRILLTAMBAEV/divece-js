@@ -1,0 +1,27 @@
+.stats {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0 4em;
+    height: 100vh;
+
+}
+
+.info {
+    flex-basis: 20em;
+}
+
+.stats ul {
+    display: flex;
+    flex-wrap: wrap;
+    width: 30em;
+
+}
+
+.stats li {
+    display: flex;
+    width: 10em;
+    list-style: none;
+    margin: 0 2em;
+} 

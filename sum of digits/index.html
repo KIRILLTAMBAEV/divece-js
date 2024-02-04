@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="inputForm">
+        <label>Введите числа <input id="num" type="text"></label>
+        <button type="submit">Узнать сумму цифр числа</button>
+        <p id="result"></p>
+    </form>
+    <script>
+        //BEASTS IN THE SUN
+        document.getElementById('inputForm').addEventListener('submit', event => {
+            event.preventDefault()
+
+            let num = parseInt(document.getElementById('num').value);
+            if (isNaN(num)) {
+                document.getElementById('result').textContent = 'ВВЕДИТЕ ЧИСЛО!'
+            //  } else if (num < 0) {
+            //     document.getElementById('result').textContent = 'Число не должно быть отрицательным';
+             } else {
+                let sum = 0;
+                // for (let i = 0; i < num.length; i++) {
+                //     sum += parseInt(num[i]);
+                // }
+
+                while (num !== 0) {
+                    sum += num % 10;
+                    num = Math.trunc(num / 10);
+                }
+                document.getElementById('result'). textContent = `${Math.abs(sum)}`; 
+            }
+        }); 
+    </script>
+</body>
+</html>

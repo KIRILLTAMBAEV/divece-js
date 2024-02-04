@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOMOS'HERMANDOS</title>
+</head>
+<body>
+    <label>Введите вещественное число:<input id = 'number' type='text'></label>
+    <button id="resultButton">Найти абсолютное значение</button>
+    <p id = 'result'></p>
+    <script> 
+        document.getElementById("resultButton").addEventListener("click", () => {
+            const num = parseFloat(document.getElementById('number').value);
+            if (!isNaN(num)) {
+              let res = num
+              if (num < 0) {
+                 res = num *-1
+              }
+
+        document.getElementById("result").textContent = `${res}`;
+            } else {
+        document.getElementById("result").textContent = 'Введите число';
+            }
+        });
+
+
+    </script> 
+</body>
+</html>

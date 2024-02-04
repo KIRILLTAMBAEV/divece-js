@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="result"></p>
+    <script>
+        
+        function random(min, max) {
+            return Math.trunc(min + Math.random() * (max - min + 1));
+        }
+       const number = Array(11).fill(0)
+       const n = 6000
+       let res
+       for (let i = 0;i < n; i++) {
+        let num = random(1 ,6)
+        let num1 = random(1 ,6)
+        let sum = num + num1
+        number[sum - 2]++
+       }
+       let msg ='';
+       for (let i = 0; i < number.length; i++) {
+        msg += `${i + 2}: ${number[i]}<br>`;
+       }
+       document.getElementById('result'). innerHTML = msg;
+       
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="inputForm">
+        <label>Введите кол-во баллов: <input id='points' type="text"></label>
+        <button type="submit">Вычеслить оценку</button>
+        <p id="result"></p>
+    </form>
+    <script>
+         document.getElementById("inputForm").addEventListener("submit", event => {
+                event.preventDefault();
+            
+                const points = parseInt(document.getElementById('points').value);
+                if (isNaN(points)) {
+                    document.getElementById('result'). textContent = "Неверный ввод.";
+                } else {
+                    let res;
+                   if (points > 100 || points < 0) {
+                        res = `неправильно введена оценка ${points}`;
+                    } else if ( points >= 90 ) {
+                        res =  "Оценка: A";
+                    } else if (points >= 80) {
+                        res =  "Оценка: B";
+                    } else if (points >= 70) {
+                        res = "Оценка: C";
+                    } else if (points >= 60) {
+                        res = 'Оценка D';
+                    } else {
+                        res = "Оценка F";
+                    } 
+                        
+                    document.getElementById("result"). textContent = res;
+                }
+            });
+    </script>
+</body>
+</html>

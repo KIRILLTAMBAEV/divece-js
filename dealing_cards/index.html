@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="result"></p>
+    <script>
+
+        function random(min, max) {
+            return Math.trunc(min + Math.random() * (max - min + 1));
+        }
+        
+        const rank = random(1, 13);
+        const suit = random(1, 4);
+        
+
+        let card
+        switch (rank) {
+            case 1:  card = 'туз ';       break;
+            case 11: card = 'Валет ' ;    break;
+            case 12: card = ' Королева '; break;
+            case 13: card = 'Король ' ;   break;
+            default: card = `${rank} ` ;  break;
+                
+        }
+        switch(suit) {
+            case 1: card += " Треф"; break;
+            case 2: card += " Бубн"; break;
+            case 3: card += " Черв"; break;
+            case 4: card += " Пик";  break;
+        }
+
+        document.getElementById('result').textContent = `Карта, которую вы выбрали — это "${card}"`
+        
+    </script>
+</body>
+</html>

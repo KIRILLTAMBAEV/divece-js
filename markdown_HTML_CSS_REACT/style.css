@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+html {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: url("graph-paper.svg"), rgb(63, 7, 189);
+    background-repeat: repeat;
+    color: white;
+}
+
+a {
+    color: white;
+    text-decoration: underline;
+}
+
+header h1 {
+    font-weight: bolder;
+    text-align: center;
+    text-shadow: 0 0 0.6em white;
+    font-size: 2em;
+}
+
+header ul {
+    text-align: center;
+    list-style: none;
+}
+
+header li {
+    display: inline;
+}
+
+article > h2 {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+article > section {
+    width: 60%;
+    background-color: rgb(27, 1, 112);
+    padding: 1.2em;
+    border-radius: 1em 0;
+    margin: 2em auto 2em auto;
+    border: solid 1px hsla(254, 98%, 90%, 50%);
+    box-shadow: 0 0 3em 1em hsla(254, 98%, 90%, 40%);
+}
+
+article > section > h3,
+article > section > h4 {
+    font-weight: bolder;
+}
+
+article > hr {
+    width: 20em;
+    border: dashed 0.2em rgb(177, 150, 234)
+}
+
+article pre {
+    background-image: linear-gradient(to right, rgb(102, 49, 202), rgb(63, 7, 216));
+    padding: 0.5em;
+    border-radius: 1em;
+    overflow: hidden;
+}
+
+article code {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+img[src="Markdown-mark.svg"] {
+    filter: invert(100%);
+}
+
+article table, article td, article th {
+    border: solid 1px white;
+    border-collapse: collapse;
+}
+
+article td, article th {
+    padding: 0.4em;
+}
+
+article th {
+    font-weight: bolder;
+    text-align: start;
+}
+
+footer {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+@media (max-width: 800px) {
+    article > section {
+        width: 80%;
+    }
+}
+
+@media print {
+    article > section {
+        box-shadow: none;
+    }
+}
+
+@media print {
+    body, a {
+    background: none;
+    color: black;
+    text-decoration: none;
+    }
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="inputForm">
+        <label>Введите вес груза<input id="w" type="text"></label>
+        <button type="submit">Узнать цену грузу</button>
+        <p id="result"></p>
+    </form>
+    <script>
+        document.getElementById('inputForm').addEventListener('submit', event => {
+            event.preventDefault()
+        const w = parseInt(document.getElementById('w'). value)
+        if (isNaN(w)) {
+            document.getElementById('result').textContent ='Введите число'
+        } else {
+            let res
+            if (w > 0 && w <= 100) {
+            res = 'Цена доставка: 3500 USD'
+        } else if (w > 100 && w <= 300) {
+            res = 'Цена доставка: 5500 USD'
+        } else if (w > 300 && w <= 1000) {
+            res = 'Цена доставка: 8500 USD'
+        }else if (w >1000 && w <= 2000) {
+            res = 'Цена доставка: 10500 USD'
+        } else if ( w > 2000) {
+            res ="Груз не может быть отправлен."
+        } else {
+            res = "Введите корректные данные веса груза"
+        }
+            document.getElementById('result').textContent = res;
+        }
+
+        });
+    </script>
+</body>
+</html>

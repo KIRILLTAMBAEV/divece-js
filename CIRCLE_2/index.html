@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="inputForm">
+        <label>Введите x<input id="x" type="text"></label><br>
+        <label>Введите y<input id="y" type="text"></label><br>
+        <button type="submit">Узнать внутри окружности или нет</button>
+        <p id="result"></p>
+    </form>
+    <script>
+        document.getElementById('inputForm').addEventListener('submit', event => {
+            event.preventDefault()
+        const x = parseInt(document.getElementById('x'). value)
+        const y = parseInt(document.getElementById('y'). value)
+        if (isNaN(x), isNaN(y)) {
+            document.getElementById('result').textContent ='Введите координаты'
+        } else {
+            let res
+            if (x >= 17 || x < -8 && y >= 2 || y <= -13) {
+            res = `Точка (${x}.0, ${y}.0) НЕ внутри окружности`
+            } else {
+                res = `Точка (${x}.0, ${y}.0)  внутри окружности`
+            }
+            document.getElementById('result').textContent = res;
+        }
+        });
+    </script>
+</body>
+</html>
